@@ -1,0 +1,39 @@
+<div class="call-view">
+<div class="row">
+	<div class="col-md-offset-4 col-md-4">
+		<div class="well white">
+			<form class="call-form" name="call-form" ng-submit="callCtrl.call()">
+				<fieldset>
+					<legend>Call a phone</legend>
+
+					<!-- To phone -->
+					<div class="form-group col-md-12">
+						<label for="to_phone" class="control-label">To phone</label>
+						<input type="text" class="form-control" name="to_phone" placeholder="to phone" ng-model="callCtrl.callData.to_phone" required>
+					</div>
+
+					<!-- Voice Text -->
+					<div class="form-group col-md-12">
+						<label for="text" class="control-label">Voice text</label>
+						<textarea type="text" class="form-control" name="text" placeholder="voice text" ng-model="callCtrl.callData.text" required></textarea>
+					</div>
+
+					<!-- Media Url -->
+					<div class="form-group col-md-12">
+						<label for="media_url" class="control-label">Media Url</label>
+						<input type="text" class="form-control" name="media_url" placeholder="url" ng-model="callCtrl.callData.media_url" required>
+					</div>
+
+					<!-- Submit button -->
+					<div class="form-group col-md-12">
+						<button type="submit" name="submit_button" class="btn btn-primary btn-block" ng-disabled="callCtrl.processing">
+							<span ng-if="!callCtrl.processing">CALL</span>
+							<div ng-if="callCtrl.processing" class="fetching-spinner"></div>
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
